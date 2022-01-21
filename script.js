@@ -10,7 +10,14 @@ form.addEventListener('submit', (e) => {
     if(todoText) {
         const todoEl = document.createElement('li')
         todoEl.innerText = todoText
+
+        todoEl.addEventListener('click', () => {
+            todoEl.classList.toggle('completed')
+        })
+
         todos.appendChild(todoEl)
+
+        input.value = ''
 
     }
 })
