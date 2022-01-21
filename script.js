@@ -17,12 +17,16 @@ function addTodo(){
 
         todoEl.addEventListener('click', () => {
             todoEl.classList.toggle('completed')
+
+            updateLS()
         })
 
         todoEl.addEventListener('contextmenu', (e) => {
             e.preventDefault()
             
             todoEl.remove()
+
+            updateLS()
         })
 
         todos.appendChild(todoEl)
