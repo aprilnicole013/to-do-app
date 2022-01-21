@@ -15,6 +15,7 @@ form.addEventListener('submit', (e) => {
             todoEl.classList.toggle('completed')
         })
 
+        //right-click to remove todo
         todoEl.addEventListener('contextmenu', (e) => {
             e.preventDefault()
             
