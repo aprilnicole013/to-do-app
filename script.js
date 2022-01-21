@@ -19,7 +19,6 @@ function addTodo(){
             todoEl.classList.toggle('completed')
         })
 
-        //right-click to remove todo
         todoEl.addEventListener('contextmenu', (e) => {
             e.preventDefault()
             
@@ -30,5 +29,22 @@ function addTodo(){
 
         input.value = ''
 
+        updateLS()
+
     }
+}
+
+function updateLS(){
+    const todosEl = document.querySelectorAll('li')
+
+    const todos = []
+
+    todosoEl.forEach(todoEl => {
+        todos.push({
+            text: todoEl.innerText,
+            completed: todoEl.classList.contains('completed')
+        })
+    })
+
+    localStorage.setItem('todos', JSON.stringify(todos))
 }
